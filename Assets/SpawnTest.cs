@@ -25,7 +25,7 @@ public sealed class SpawnTest : MonoBehaviour
 
         // Position/rotation array
         var range = Enumerable.Range(0, TotalCount);
-        var pos = range.Select(x => Random.insideUnitSphere * 5).ToArray();
+        var pos = range.Select(x => Random.insideUnitSphere * 10).ToArray();
         var rot = range.Select(x => Random.rotation).ToArray();
 
         await Interval();
