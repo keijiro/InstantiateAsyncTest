@@ -167,6 +167,7 @@ MonoBehaviour:
   <BatchSize>k__BackingField: 100
   <BatchCount>k__BackingField: 30
   <TimeSlice>k__BackingField: 2
+  <Interval>k__BackingField: 1
 --- !u!1 &768479876
 GameObject:
   m_ObjectHideFlags: 0

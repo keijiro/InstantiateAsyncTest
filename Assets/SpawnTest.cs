@@ -11,13 +11,12 @@ public sealed class SpawnTest : MonoBehaviour
     [field:SerializeField] public int BatchSize { get; set; } = 100;
     [field:SerializeField] public int BatchCount { get; set; } = 30;
     [field:SerializeField] public float TimeSlice { get; set; } = 2;
+    [field:SerializeField] public float Interval { get; set; } = 1;
 
     int TotalCount => BatchSize * BatchCount;
 
-    async Awaitable Interval()
-    {
-        for (var i = 0; i < 5; i++) await Awaitable.NextFrameAsync();
-    }
+    async Awaitable WaitInterval()
+      => await Awaitable.WaitForSecondsAsync(Interval);
 
     async void Start()
     {
@@ -28,19 +27,19 @@ public sealed class SpawnTest : MonoBehaviour
         var pos = range.Select(x => Random.insideUnitSphere * 10).ToArray();
         var rot = range.Select(x => Random.rotation).ToArray();
 
-        await Interval();
+        await WaitInterval();
 
         // Simple spawn test
         var spawned1 = new GameObject[TotalCount];
         for (var i = 0; i < TotalCount; i++)
             spawned1[i] = Instantiate(_prefab, pos[i], rot[i]);
 
-        await Interval();
+        await WaitInterval();
 
         // Cleaning up
         foreach (var o in spawned1) Destroy(o);
 
-        await Interval();
+        await WaitInterval();
 
         // Batch spawn test
         var spawned2 = new AsyncInstantiateOperation<GameObject>[BatchCount];
@@ -53,13 +52,13 @@ public sealed class SpawnTest : MonoBehaviour
         for (var i = 0; i < BatchCount; i++)
             while (!spawned2[i].isDone) await Awaitable.NextFrameAsync();
 
-        await Interval();
+        await WaitInterval();
 
         // Cleaning up
         for (var i = 0; i < BatchCount; i++)
             foreach (var o in spawned2[i].Result) Destroy(o);
 
-        await Interval();
+        await WaitInterval();
 
         Application.Quit();
     }
