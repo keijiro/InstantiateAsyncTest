@@ -44,9 +44,6 @@
         },
         {
             "m_Id": "3cff876942504dd48c12c80c77054321"
-        },
-        {
-            "m_Id": "3b57c4dd190c4c8fab24e823444b68f0"
         }
     ],
     "m_GroupDatas": [],
@@ -151,9 +148,6 @@
             },
             {
                 "m_Id": "3cff876942504dd48c12c80c77054321"
-            },
-            {
-                "m_Id": "3b57c4dd190c4c8fab24e823444b68f0"
             }
         ]
     },
@@ -201,7 +195,7 @@
     "m_ActiveSubTarget": {
         "m_Id": "98656ee61239470caa09112fe3c61acf"
     },
-    "m_AllowMaterialOverride": true,
+    "m_AllowMaterialOverride": false,
     "m_SurfaceType": 1,
     "m_ZTestMode": 4,
     "m_ZWriteControl": 0,
@@ -518,40 +512,6 @@
 {
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.BlockNode",
-    "m_ObjectId": "3b57c4dd190c4c8fab24e823444b68f0",
-    "m_Group": {
-        "m_Id": ""
-    },
-    "m_Name": "SurfaceDescription.AlphaClipThreshold",
-    "m_DrawState": {
-        "m_Expanded": true,
-        "m_Position": {
-            "serializedVersion": "2",
-            "x": 0.0,
-            "y": 0.0,
-            "width": 0.0,
-            "height": 0.0
-        }
-    },
-    "m_Slots": [
-        {
-            "m_Id": "823c5deadc7f438094011ebaec1e007f"
-        }
-    ],
-    "synonyms": [],
-    "m_Precision": 0,
-    "m_PreviewExpanded": true,
-    "m_DismissedVersion": 0,
-    "m_PreviewMode": 0,
-    "m_CustomColors": {
-        "m_SerializableColors": []
-    },
-    "m_SerializedDescriptor": "SurfaceDescription.AlphaClipThreshold"
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.BlockNode",
     "m_ObjectId": "3cff876942504dd48c12c80c77054321",
     "m_Group": {
         "m_Id": ""
@@ -809,21 +769,6 @@
     },
     "m_Labels": [],
     "m_Space": 0
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
-    "m_ObjectId": "823c5deadc7f438094011ebaec1e007f",
-    "m_Id": 0,
-    "m_DisplayName": "Alpha Clip Threshold",
-    "m_SlotType": 0,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "AlphaClipThreshold",
-    "m_StageCapability": 2,
-    "m_Value": 0.5,
-    "m_DefaultValue": 0.5,
-    "m_Labels": []
 }
 
 {
