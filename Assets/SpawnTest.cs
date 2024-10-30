@@ -12,6 +12,7 @@ public sealed class SpawnTest : MonoBehaviour
     [field:SerializeField] public int BatchCount { get; set; } = 30;
     [field:SerializeField] public float TimeSlice { get; set; } = 2;
     [field:SerializeField] public float Interval { get; set; } = 1;
+    [field:SerializeField] public float Radius { get; set; } = 1;
 
     int TotalCount => BatchSize * BatchCount;
 
@@ -24,7 +25,7 @@ public sealed class SpawnTest : MonoBehaviour
 
         // Position/rotation array
         var range = Enumerable.Range(0, TotalCount);
-        var pos = range.Select(x => Random.insideUnitSphere * 10).ToArray();
+        var pos = range.Select(x => Random.insideUnitSphere * Radius).ToArray();
         var rot = range.Select(x => Random.rotation).ToArray();
 
         await WaitInterval();
